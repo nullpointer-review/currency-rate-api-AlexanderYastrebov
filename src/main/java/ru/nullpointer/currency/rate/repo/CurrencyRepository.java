@@ -1,5 +1,6 @@
 package ru.nullpointer.currency.rate.repo;
 
+import java.time.LocalDate;
 import java.util.Optional;
 import ru.nullpointer.currency.rate.domain.Rate;
 
@@ -9,5 +10,5 @@ import ru.nullpointer.currency.rate.domain.Rate;
  */
 public interface CurrencyRepository {
 
-    Optional<Rate> getRate(String code);
+    Optional<Rate> getRate(String code, LocalDate date);
 }

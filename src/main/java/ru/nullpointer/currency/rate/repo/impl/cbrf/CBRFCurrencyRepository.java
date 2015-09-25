@@ -1,6 +1,7 @@
 package ru.nullpointer.currency.rate.repo.impl.cbrf;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Optional;
 import javax.annotation.PostConstruct;
 import org.slf4j.Logger;
@@ -21,10 +22,14 @@ public class CBRFCurrencyRepository implements CurrencyRepository {
     private RestTemplate restTemplate;
 
     @Override
-    public Optional<Rate> getRate(String code) {
+    public Optional<Rate> getRate(String code, LocalDate date) {
         Assert.hasText(code);
+        Assert.notNull(date);
 
-        ValCurs curs = restTemplate.getForObject("http://www.cbr.ru/scripts/XML_daily.asp?date_req=02/03/2002", ValCurs.class);
+        ValCurs curs = restTemplate.getForObject("http://www.cbr.ru/scripts/XML_daily.asp?date_req={date}",
+                ValCurs.class, date.format(LocalDateAdapter.FORMATTER));
+
+        logger.info("curs: {}", curs);
 
         Optional<Valute> val = curs.getValutes().stream()
                 .filter((v) -> code.equals(v.getCode()))

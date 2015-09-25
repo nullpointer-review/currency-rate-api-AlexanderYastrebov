@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Alexander Yastrebov
  */
 @XmlRootElement(name = "ValCurs")
-public class ValCurs {
+class ValCurs {
 
     private LocalDate date;
     private List<Valute> valutes;

@@ -8,17 +8,17 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
  *
  * @author Alexander Yastrebov
  */
-public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
+class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
 
-    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     @Override
     public LocalDate unmarshal(String v) throws Exception {
-        return LocalDate.parse(v, formatter);
+        return LocalDate.parse(v, FORMATTER);
     }
 
     @Override
     public String marshal(LocalDate v) throws Exception {
-        return v.format(formatter);
+        return v.format(FORMATTER);
     }
 }

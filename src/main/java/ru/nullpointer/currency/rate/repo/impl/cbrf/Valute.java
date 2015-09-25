@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlElement;
  *
  * @author Alexander Yastrebov
  */
-public class Valute {
+class Valute {
 
     private String code;
     private int nominal;

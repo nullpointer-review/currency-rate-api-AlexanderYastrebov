@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
  *
  * @author Alexander Yastrebov
  */
-public class BigDecimalAdapter extends XmlAdapter<String, BigDecimal> {
+class BigDecimalAdapter extends XmlAdapter<String, BigDecimal> {
 
     @Override
     public BigDecimal unmarshal(String v) throws Exception {
