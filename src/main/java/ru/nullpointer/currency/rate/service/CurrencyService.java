@@ -1,5 +1,6 @@
 package ru.nullpointer.currency.rate.service;
 
+import java.util.Optional;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import ru.nullpointer.currency.rate.domain.Rate;
@@ -15,7 +16,7 @@ public class CurrencyService {
     @Resource
     private CurrencyRepository currencyRepository;
 
-    public Rate getRate(String code) {
+    public Optional<Rate> getRate(String code) {
         return currencyRepository.getRate(code);
     }
 }

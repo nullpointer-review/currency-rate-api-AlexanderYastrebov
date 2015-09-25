@@ -1,5 +1,6 @@
 package ru.nullpointer.currency.rate.repo;
 
+import java.util.Optional;
 import ru.nullpointer.currency.rate.domain.Rate;
 
 /**
@@ -8,5 +9,5 @@ import ru.nullpointer.currency.rate.domain.Rate;
  */
 public interface CurrencyRepository {
 
-    Rate getRate(String code);
+    Optional<Rate> getRate(String code);
 }

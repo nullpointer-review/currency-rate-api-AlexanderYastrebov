@@ -1,5 +1,8 @@
 package ru.nullpointer.currency.rate.domain;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
 /**
  *
  * @author Alexander Yastrebov
@@ -7,8 +10,8 @@ package ru.nullpointer.currency.rate.domain;
 public class Rate {
 
     private String code;
-    private String rate;
-    private String date;
+    private BigDecimal rate;
+    private LocalDate date;
 
     public String getCode() {
         return code;
@@ -18,19 +21,19 @@ public class Rate {
         this.code = code;
     }
 
-    public String getRate() {
+    public BigDecimal getRate() {
         return rate;
     }
 
-    public void setRate(String rate) {
+    public void setRate(BigDecimal rate) {
         this.rate = rate;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

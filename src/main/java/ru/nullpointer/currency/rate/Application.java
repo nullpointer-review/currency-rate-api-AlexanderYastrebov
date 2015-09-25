@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import ru.nullpointer.currency.rate.repo.CurrencyRepository;
-import ru.nullpointer.currency.rate.repo.impl.CBRFCurrencyRepository;
+import ru.nullpointer.currency.rate.repo.impl.cbrf.CBRFCurrencyRepository;
 
 /**
  *
